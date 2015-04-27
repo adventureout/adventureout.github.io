@@ -19,7 +19,7 @@
     	h1, h2, h3, h4, h5, h6
     	{
     		font-family: 'proxima-nova', sans-serif;
-    		font-weight: 700;
+    		font-weight: 100;
     	}
 		.jumbotron
 		{
@@ -31,10 +31,34 @@
 			color: #f4f4f4;
 		}
 
+		.jumbotron h1
+		{
+			text-transform: uppercase;
+			font-weight: 700;
+			font-size: 3.75em;
+			margin-bottom: .1em;
+			line-height: 100%;
+		}
+
+		.jumbotron h4
+		{
+			margin: 0;
+			font-size: 1.53em;
+		}
+
 		.navbar-default
 		{
 			background-color: transparent;
 			border: none;
+		}
+
+		.navbar-default  .navbar-brand
+		{
+			font-family: 'hwt-artz', 'alternate-gothic-no-1-d';
+			font-weight: 700;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+			color: #f4f4f4;
 		}
 
 		.thumbnail
@@ -71,10 +95,26 @@
 			padding: 5px 10px;
 			border-radius: 2px;
 			box-shadow: none;
-			border: 1px solid #c0c0c0;
+			border: 1px solid #000;
 			vertical-align: middle;
 			margin-top: 8px;
-			background: rgba(0, 0, 0 ,.15);
+			background: rgba(0, 0, 0 ,.2);
+		}
+
+		.hike-search::-webkit-input-placeholder {
+			color: #606060;
+		}
+
+		.hike-search:-moz-placeholder { /* Firefox 18- */
+			color: #606060;  
+		}
+
+		.hike-search::-moz-placeholder {  /* Firefox 19+ */
+			color: #606060;  
+		}
+
+		.hike-search:-ms-input-placeholder {  
+			color: #606060;  
 		}
 
 		.hikes-filter h4
@@ -117,7 +157,7 @@
 		</div>
 
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-				<input type="text" class="hike-search" placeholder="Search">
+				<input type="text" class="hike-search" placeholder="Search for an Adventure">
 		<ul class="nav navbar-nav navbar-right">
 			<li><a href="#">Larry</a></li>
 			<li class="dropdown">
