@@ -21,10 +21,7 @@ var Routes = Backbone.Router.extend({
     
   },
   hikes: function() {
-    
-  },
-  climbing: function() {
-    
+    console.log("Oh hello!");
   },
 
   hikes: function(sort, order) {

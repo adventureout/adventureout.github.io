@@ -54,7 +54,7 @@
 
 		.navbar-default  .navbar-brand
 		{
-			font-family: 'hwt-artz', 'alternate-gothic-no-1-d';
+			font-family: 'hwt-artz', 'alternate-gothic-no-1-d', sans-serif;
 			font-weight: 700;
 			text-transform: uppercase;
 			letter-spacing: 1px;
@@ -142,8 +142,24 @@
 
 		input[type="range"]
 		{
-			display: inline-block;
-			width: auto;
+			
+		}
+
+		button
+		{
+			outline: none;
+		}
+
+		button.btn-default.selected
+		{
+			color: #FFF;
+			background-color: #337AB7;
+			border-color: #2E6DA4;
+		}
+
+		.btn.active.focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn:active:focus, .btn:focus
+		{
+			outline: none;
 		}
     </style>
   </head>
@@ -188,7 +204,7 @@
 	
 		<div class="container">
 				<ul class="nav nav-pills">
-					<li role="presentation" class="active"><a href="#">Hikes</a></li>
+					<li role="presentation" class="active"><a href="#hikes">Hikes</a></li>
 					<li role="presentation"><a href="#">Climbing</a></li>
 					<li role="presentation"><a href="#">Camping</a></li>
 					<li role="presentation"><a href="#">Other Adventures</a></li>
@@ -200,19 +216,23 @@
 					<div class="hikes-filter col-lg-2 col-lg-push-10 col-md-12">
 						<h3>Filter by:</h3>
 						<h4>Name</h4>
-							<button type="button" class="btn btn-default" aria-label="Left Align">
-							  <span class="glyphicon glyphicon-sort-by-alphabet" aria-hidden="true"></span>
-							</button>
-							<button type="button" class="btn btn-default" aria-label="Left Align">
-							  <span class="glyphicon glyphicon-sort-by-alphabet-alt" aria-hidden="true"></span>
-							</button>
-						<h4 class="selected">Time</h4>
-						<button type="button" class="btn btn-primary" aria-label="Left Align">
-						  <span class="glyphicon glyphicon-sort-by-order" aria-hidden="true"></span>
-						</button>
-						<button type="button" class="btn btn-default" aria-label="Left Align">
-						  <span class="glyphicon glyphicon-sort-by-order-alt" aria-hidden="true"></span>
-						</button>
+							<div class="btn-group btn-group-md" role="group">
+								<button type="button" class="btn btn-default" aria-label="Left Align">
+								  <span class="glyphicon glyphicon-sort-by-alphabet" aria-hidden="true"></span>
+								</button>
+								<button type="button" class="btn btn-default" aria-label="Left Align">
+								  <span class="glyphicon glyphicon-sort-by-alphabet-alt" aria-hidden="true"></span>
+								</button>
+							</div>
+						<h4>Time</h4>
+							<div class="btn-group btn-group-md" role="group">
+								<button type="button" class="btn btn-default" aria-label="Left Align">
+								  <span class="glyphicon glyphicon-sort-by-order" aria-hidden="true"></span>
+								</button>
+								<button type="button" class="btn btn-default" aria-label="Left Align">
+								  <span class="glyphicon glyphicon-sort-by-order-alt" aria-hidden="true"></span>
+								</button>
+							</div>
 						<h4>Difficulty</h4>
 						<div class="btn-group btn-group-xs" role="group" aria-label="...">
 							<button type="button" class="btn btn-default">Easy</button>
@@ -220,7 +240,7 @@
 							<button type="button" class="btn btn-default">Hard</button>
 						</div>
 						<h4>Length</h4>
-						<label>2mi</label>
+						<label id="hike-length">2mi</label>
 						<input type="range" value="2" min=".5" max="10" step=".5">
 						<h4>Date Worthy</h4>
 						<input type="checkbox" id="completed_check"> <label for="completed_check">Show Completed</label>
@@ -383,6 +403,7 @@
 
 			var test = new Adventure.Collections.Hikes(data);
 			var Hikes = new Adventure.Views.Hikes({ collection: test });
+			new Adventure.Views.HikesFilter();
 			Hikes.render();
 			Backbone.history.start();
 

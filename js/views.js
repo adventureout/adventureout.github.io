@@ -35,3 +35,36 @@ Adventure.Views.Hikes = Backbone.View.extend({
 		this.$el.append( tempHike.render().el );
 	}
 });
+
+
+Adventure.Views.HikesFilter = Backbone.View.extend({
+	el: ".hikes-filter",
+
+	events: {
+		'click button': 'sort',
+		'input input[type="range"]': 'updateMileage'
+	},
+
+	initialize: function()
+	{
+
+	},
+
+	render: function()
+	{
+
+	},
+
+	sort: function(evt)
+	{
+		var target = evt.currentTarget;
+		$(target).parent().find('button').removeClass('selected');
+		$(target).addClass('selected');
+	},
+
+	updateMileage: function(evt)
+	{
+		var length = $(evt.currentTarget).val();
+		$("#hike-length").html( length + "mi" );
+	}
+});
