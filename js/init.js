@@ -4,28 +4,24 @@ var Adventure =Adventure || {
 	Views: {}
 };
 
+	var Routes = Backbone.Router.extend({
 
-var Routes = Backbone.Router.extend({
+	  routes: {
+	    "climbing":               "climbing",    // #climbing
+	    "camping":                "camping",    // #camping
+	    "hikes":                  "hikes"    // #hikes
+	  },
 
-  routes: {
-    "climbing":               "climbing",    // #climbing
-    "camping":                "camping",    // #camping
-    "hikes":                  "hikes",    // #hikes
-    "hikes/:sort/:order":     "hikes",    // #hikes
-  },
+	  climbing: function() {
+	    console.log("Oh hello!");
+	  },
+	  camping: function() {
+	    
+	  },
+	  hikes: function() {
+	    console.log("Oh hello!");
+	  }
 
-  climbing: function() {
-    console.log("Oh hello!");
-  },
-  camping: function() {
-    
-  },
-  hikes: function() {
-    console.log("Oh hello!");
-  },
+	});
 
-  hikes: function(sort, order) {
-    console.log('Sort' + sort + ' Order' + order);
-  }
-
-});
+	

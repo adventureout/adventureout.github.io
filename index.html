@@ -205,8 +205,8 @@
 		<div class="container">
 				<ul class="nav nav-pills">
 					<li role="presentation" class="active"><a href="#hikes">Hikes</a></li>
-					<li role="presentation"><a href="#">Climbing</a></li>
-					<li role="presentation"><a href="#">Camping</a></li>
+					<li role="presentation"><a href="#climbing">Climbing</a></li>
+					<li role="presentation"><a href="#camping">Camping</a></li>
 					<li role="presentation"><a href="#">Other Adventures</a></li>
 					<li role="presentation"><a href="#"></a></li>
 					<li role="presentation"><a href="#">Meet our Experts</a></li>
@@ -405,6 +405,8 @@
 			var Hikes = new Adventure.Views.Hikes({ collection: test });
 			new Adventure.Views.HikesFilter();
 			Hikes.render();
+			
+			new Routes();
 			Backbone.history.start();
 
 			console.log(test);
