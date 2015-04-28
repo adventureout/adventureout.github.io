@@ -85,6 +85,12 @@ Adventure.Views.HikesFilter = Backbone.View.extend({
 			case "length-desc":
 				this.sortLength(false);
 			break;
+			case "time-asc":
+				this.sortTime(true);
+			break;
+			case "time-desc":
+				this.sortTime(false);
+			break;
 			
 		}
 
@@ -106,6 +112,18 @@ Adventure.Views.HikesFilter = Backbone.View.extend({
 	{
 		var temp = Adventure.Hiking.OriginalCollection.toJSON();
 		var sorted = _.sortBy(temp, 'distance');
+		if (!asc)
+		{
+			sorted = sorted.reverse();
+		}
+		Adventure.Hiking.SortedCollection = new Adventure.Collections.Hikes(sorted);
+		Adventure.vent.trigger('collectionSorted');
+	},
+
+	sortTime: function(asc)
+	{
+		var temp = Adventure.Hiking.OriginalCollection.toJSON();
+		var sorted = _.sortBy(temp, 'time');
 		if (!asc)
 		{
 			sorted = sorted.reverse();
