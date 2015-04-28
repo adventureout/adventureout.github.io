@@ -21,11 +21,12 @@ Adventure.Views.Hikes = Backbone.View.extend({
 
 	initialize: function()
 	{
-
+		Adventure.vent.on('collectionSorted', this.collectionSorted, this);
 	},
 
 	render: function()
 	{
+		this.el.innerHTML = "";
 		this.collection.each( this.addOne, this );
 	},
 
@@ -33,6 +34,13 @@ Adventure.Views.Hikes = Backbone.View.extend({
 	{
 		var tempHike = new Adventure.Views.Hike( {model: hike} );
 		this.$el.append( tempHike.render().el );
+	},
+
+	collectionSorted: function()
+	{
+		this.collection = Adventure.Hiking.SortedCollection;
+		this.render();
+		console.log("Its Sorting!!");
 	}
 });
 
@@ -60,6 +68,50 @@ Adventure.Views.HikesFilter = Backbone.View.extend({
 		var target = evt.currentTarget;
 		$(target).parent().find('button').removeClass('selected');
 		$(target).addClass('selected');
+
+		var sortType =  $(target).data('sort');
+
+		switch (sortType)
+		{
+			case "alphabet-asc":
+				this.sortAlphabet(true);
+			break;
+			case "alphabet-desc":
+				this.sortAlphabet(false);
+			break;
+			case "length-asc":
+				this.sortLength(true);
+			break;
+			case "length-desc":
+				this.sortLength(false);
+			break;
+			
+		}
+
+	},
+
+	sortAlphabet: function(asc)
+	{
+		var temp = Adventure.Hiking.OriginalCollection.toJSON();
+		var sorted = _.sortBy(temp, 'name');
+		if (!asc)
+		{
+			sorted = sorted.reverse();
+		}
+		Adventure.Hiking.SortedCollection = new Adventure.Collections.Hikes(sorted);
+		Adventure.vent.trigger('collectionSorted');
+	},
+
+	sortLength: function(asc)
+	{
+		var temp = Adventure.Hiking.OriginalCollection.toJSON();
+		var sorted = _.sortBy(temp, 'distance');
+		if (!asc)
+		{
+			sorted = sorted.reverse();
+		}
+		Adventure.Hiking.SortedCollection = new Adventure.Collections.Hikes(sorted);
+		Adventure.vent.trigger('collectionSorted');
 	},
 
 	updateMileage: function(evt)

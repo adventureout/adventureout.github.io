@@ -220,19 +220,19 @@
 						<h3>Filter by:</h3>
 						<h4>Name</h4>
 							<div class="btn-group btn-group-md" role="group">
-								<button type="button" class="btn btn-default" aria-label="Left Align">
+								<button type="button" class="btn btn-default" data-sort="alphabet-asc" aria-label="Left Align">
 								  <span class="glyphicon glyphicon-sort-by-alphabet" aria-hidden="true"></span>
 								</button>
-								<button type="button" class="btn btn-default" aria-label="Left Align">
+								<button type="button" class="btn btn-default" data-sort="alphabet-desc" aria-label="Left Align">
 								  <span class="glyphicon glyphicon-sort-by-alphabet-alt" aria-hidden="true"></span>
 								</button>
 							</div>
 						<h4>Time</h4>
 							<div class="btn-group btn-group-md" role="group">
-								<button type="button" class="btn btn-default" aria-label="Left Align">
+								<button type="button" class="btn btn-default" data-sort="length-asc" aria-label="Left Align">
 								  <span class="glyphicon glyphicon-sort-by-order" aria-hidden="true"></span>
 								</button>
-								<button type="button" class="btn btn-default" aria-label="Left Align">
+								<button type="button" class="btn btn-default" data-sort="length-desc" aria-label="Left Align">
 								  <span class="glyphicon glyphicon-sort-by-order-alt" aria-hidden="true"></span>
 								</button>
 							</div>
@@ -404,13 +404,18 @@
 			}
 			];
 
+			Adventure.vent = _.extend({}, Backbone.Events);
+
 			var test = new Adventure.Collections.Hikes(data);
+			Adventure.Hiking.OriginalCollection = test;
+			Adventure.Hiking.SortedCollection = test;
 			var Hikes = new Adventure.Views.Hikes({ collection: test });
 			new Adventure.Views.HikesFilter();
 			Hikes.render();
 			
 			new Routes();
 			Backbone.history.start();
+
 
 			console.log(test);
     </script>

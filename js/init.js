@@ -1,7 +1,8 @@
 var Adventure =Adventure || {
 	Models: {},
 	Collections: {},
-	Views: {}
+	Views: {},
+	Hiking: {}
 };
 
 	var Routes = Backbone.Router.extend({
@@ -24,4 +25,3 @@ var Adventure =Adventure || {
 
 	});
 
-	
