@@ -19,17 +19,25 @@
     <title>Hiking Logan Canyon</title>
     <!-- 
 		Colors: #EEEEEA
-		Text Color: #5F2225
+		Text Color: #5B1D20
 		Plant Colors: #AFCA93
 		Badge Color: #B01F1E
 		Heading Color: #A29E79
      -->
     <style>
+		body
+		{
+			background-color: #F1F1F1;
+		}
+
     	h1, h2, h3, h4, h5, h6
     	{
     		font-family: 'proxima-nova', sans-serif;
     		font-weight: 100;
+    		color: #5B1D20;
     	}
+
+    	
 		.jumbotron
 		{
 			padding-top: 0;
@@ -38,6 +46,7 @@
 			background-size: cover;
 			background-position: center center;
 			color: #f4f4f4;
+			margin-bottom: 0;
 		}
 
 		.jumbotron h1
@@ -53,6 +62,19 @@
 		{
 			margin: 0;
 			font-size: 1.53em;
+		}
+
+		.nav-container a
+		{
+			color: #fff;
+		}
+
+		.nav-container
+		{
+			background-color: #A29E79;
+			background-color: #395871;
+			padding: 1.5em 0;
+			margin-bottom: 30px;
 		}
 
 		.navbar-default
@@ -71,10 +93,11 @@
 			font-size: 1.5em;
 		}
 
-		body
+		.nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover
 		{
-			background-color: #EEEEEA;
+			background-color: #E06733;
 		}
+
 
 		.thumbnail
 		{
@@ -97,9 +120,45 @@
 			padding: 8px 0;
 		}
 
+		.most-popular small
+		{
+			font-family: 'serif';
+			font-style: italic;
+			letter-spacing: 1px;
+		}
+
 		.most-popular div > div
 		{
 			margin-bottom: 2em;
+		}
+
+		.filter-heading-container
+		{
+			background-color: #EABA46;
+			text-align: center;
+			padding: .75em 0 .25em 0;
+			position: relative;
+		}
+
+		.filter-heading-container::after
+		{
+			content: '';
+			position: absolute;
+			width: 13px; height: 13px;
+			background-color: #fff;
+			top: 6px; left: 50%;
+			border-radius: 7px;
+			margin-left: -7px;
+			border: 3px solid #F8D161;
+		}
+
+		.filter-heading-container h3
+		{
+			color: #426838;
+			text-transform: uppercase;
+			font-size: 1em;
+			letter-spacing: 3px;
+			font-weight: 600;
 		}
 
 		#hikes-container.sorted .hike:first-child a
@@ -143,8 +202,20 @@
 
 		.hikes-filter h4
 		{
-			color: #337AB7;
+			color: #426838;
 			margin: 1em 0 .25em;
+			border-top: 1px solid rgba(66, 104, 56, .25);
+			margin-top: 15px;
+			padding-top: 15px;
+			text-transform: uppercase;
+			font-size: 1.15em;
+		}
+
+		.hikes-filter h4:first-of-type
+		{
+			border-top: none;
+			margin-top: 18px;
+			padding-top: 0;
 		}
 
 		.hikes-filter h4.selected
@@ -185,6 +256,18 @@
 		{
 			outline: none;
 		}
+
+		footer
+		{
+			background-color: #F7921E;
+			background-color: #426838;
+			padding: 3.5em 0;
+			margin-top: 7em;
+			background-image: url(img/topo.svg);
+  			background-size: cover;
+		}
+
+		
     </style>
   </head>
   <body>
@@ -225,20 +308,29 @@
 			</div>
 		</div>
 	</div>
+
+		<div class="row nav-container">
+		<div class="container">
+			
+			<ul class="nav nav-pills col-md-10 center">
+				<li role="presentation" class="active"><a href="#hikes">Hikes</a></li>
+				<li role="presentation"><a href="#climbing">Climbing</a></li>
+				<li role="presentation"><a href="#camping">Camping</a></li>
+				<li role="presentation"><a href="#">Other Adventures</a></li>
+				<li role="presentation"><a href="#"></a></li>
+				<li role="presentation"><a href="#">Meet our Experts</a></li>
+			</ul>
+		</div>
+		</div>
 	
 		<div class="container body-container">
-				<ul class="nav nav-pills">
-					<li role="presentation" class="active"><a href="#hikes">Hikes</a></li>
-					<li role="presentation"><a href="#climbing">Climbing</a></li>
-					<li role="presentation"><a href="#camping">Camping</a></li>
-					<li role="presentation"><a href="#">Other Adventures</a></li>
-					<li role="presentation"><a href="#"></a></li>
-					<li role="presentation"><a href="#">Meet our Experts</a></li>
-				</ul>
+				
 
 				<div class="row hikes-container">
 					<div class="hikes-filter col-lg-2 col-lg-push-10 col-md-12">
-						<h3>Filter by:</h3>
+						<div class="filter-heading-container">
+							<h3>Filter by</h3>
+						</div>
 						<h4>Name</h4>
 							<div class="btn-group btn-group-md" role="group">
 								<button type="button" class="btn btn-default" data-sort="alphabet-asc" aria-label="Left Align">
@@ -296,11 +388,13 @@
 			</div> <!-- END Hikes Container -->
 		</div> <!-- END Main Container -->
 
-		<div class="row">
-			<div class="col-md-12">
-				<h1>Test</h1>
+		<footer class="row">
+			<div class="container">
+				<div class="col-md-12">
+					<h1>Contact US</h1>
+				</div>
 			</div>
-		</div>
+		</footer>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
