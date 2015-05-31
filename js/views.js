@@ -1,6 +1,6 @@
 Adventure.Views.Hike = Backbone.View.extend({
 	tagName: "div",
-	className: "col-xs-6 col-md-3",
+	className: "col-xs-6 col-md-3 hike",
 
 	template: Templates.Hike,
 
@@ -40,7 +40,7 @@ Adventure.Views.Hikes = Backbone.View.extend({
 	{
 		this.collection = Adventure.Hiking.SortedCollection;
 		this.render();
-		console.log("Its Sorting!!");
+		this.$el.addClass('sorted');
 	}
 });
 

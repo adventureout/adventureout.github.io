@@ -17,6 +17,13 @@
 
 
     <title>Hiking Logan Canyon</title>
+    <!-- 
+		Colors: #EEEEEA
+		Text Color: #5F2225
+		Plant Colors: #AFCA93
+		Badge Color: #B01F1E
+		Heading Color: #A29E79
+     -->
     <style>
     	h1, h2, h3, h4, h5, h6
     	{
@@ -64,6 +71,11 @@
 			font-size: 1.5em;
 		}
 
+		.body-container
+		{
+			background-color: #EEEEEA;
+		}
+
 		.thumbnail
 		{
 			position: relative;
@@ -88,6 +100,15 @@
 		.most-popular div > div
 		{
 			margin-bottom: 2em;
+		}
+
+		#hikes-container.sorted .hike:first-child a
+		{
+			border-color: #4CAE4C;
+			transform: scale(1.05) translateY(3px);
+			box-shadow: 0 0 10px 4px rgba(0, 0, 0, .05);
+			-webkit-transition: all 1s;
+			transition: all 1s;
 		}
 
 		.hike-search
@@ -205,7 +226,7 @@
 		</div>
 	</div>
 	
-		<div class="container">
+		<div class="container body-container">
 				<ul class="nav nav-pills">
 					<li role="presentation" class="active"><a href="#hikes">Hikes</a></li>
 					<li role="presentation"><a href="#climbing">Climbing</a></li>
@@ -262,7 +283,7 @@
 				<div class="col-lg-10 col-lg-pull-2 col-md-12">
 				
 				<div class="most-popular">
-					<h1>Most Popular</h1>
+					<h1>Most Popular <small class="text-right">Sorted by:</small></h1>
 					<div id="hikes-container" class="row">
 					  
 					</div>
