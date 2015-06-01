@@ -28,6 +28,7 @@
 		body
 		{
 			background-color: #F1F1F1;
+			background-color: #FFF;
 		}
 
     	h1, h2, h3, h4, h5, h6
@@ -41,7 +42,7 @@
 		.jumbotron
 		{
 			padding-top: 0;
-			padding-bottom: 225px;
+			padding-bottom: 430px;
 			background-image: -webkit-linear-gradient(rgba(0,0,100,.2), rgba(0,0,100,.3)), url(img/banner-1.jpg);
 			background-size: cover;
 			background-position: center center;
@@ -66,15 +67,39 @@
 
 		.nav-container a
 		{
-			color: #fff;
+			color: #E06733;
+			font-weight: 600;
+			text-transform: uppercase;
+			letter-spacing: .5px;
+			color: #444;
+			font-size: 16px;
 		}
 
 		.nav-container
 		{
-			background-color: #A29E79;
-			background-color: #395871;
-			padding: 1.5em 0;
-			margin-bottom: 30px;
+			/*background-color: #A29E79;*/
+			/*background-color: #395871;*/
+			padding: 30px 0 45px;
+			/*margin-bottom: 30px;*/
+		}
+
+		.nav-container ul
+		{
+			border-bottom: 1px solid #DDD;
+			padding-bottom: 45px;
+			position: relative;
+		}
+
+		.nav-container ul::after
+		{
+			content: url('img/mtn-small.png');
+			width: 60px;
+			height: 40px;
+			background-color: #fff;
+			position: absolute;
+			bottom: -23px; left: 50%;
+			text-align: center;
+			margin-left: -30px;
 		}
 
 		.navbar-default
@@ -119,7 +144,11 @@
 			background-image: -webkit-linear-gradient(rgba(0,0,0,.01), rgba(0,0,0,.1));
 			padding: 8px 0;
 		}
-
+		
+		.most-popular h1
+		{
+			margin-top: 0;
+		}
 		.most-popular small
 		{
 			font-family: 'serif';
@@ -302,8 +331,8 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-10">
-					<h1 class="text-right">Adventure Out </h1>
-					<h4 class="text-right">DISCOVER WHAT TO DO IN LOGAN CANYON</h4>
+					<!-- <h1 class="text-right">Adventure Out </h1>
+					<h4 class="text-right">DISCOVER WHAT TO DO IN LOGAN CANYON</h4> -->
 				</div>
 			</div>
 		</div>
@@ -312,7 +341,7 @@
 		<div class="row nav-container">
 		<div class="container">
 			
-			<ul class="nav nav-pills col-md-10 center">
+			<ul class="nav nav-pills col-md-12 center">
 				<li role="presentation" class="active"><a href="#hikes">Hikes</a></li>
 				<li role="presentation"><a href="#climbing">Climbing</a></li>
 				<li role="presentation"><a href="#camping">Camping</a></li>
