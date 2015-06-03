@@ -1,6 +1,6 @@
 Adventure.Views.Hike = Backbone.View.extend({
 	tagName: "div",
-	className: "col-xs-6 col-md-3 hike",
+	className: "col-xs-6 col-md-4 hike",
 
 	template: Templates.Hike,
 

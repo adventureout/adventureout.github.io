@@ -33,7 +33,7 @@
 
     	h1, h2, h3, h4, h5, h6
     	{
-    		font-family: 'proxima-nova', sans-serif;
+    		font-family: 'omnes-pro', 'proxima-nova', sans-serif;
     		font-weight: 100;
     		color: #5B1D20;
     	}
@@ -72,7 +72,7 @@
 			text-transform: uppercase;
 			letter-spacing: .5px;
 			color: #444;
-			font-size: 16px;
+			font-size: 14px;
 		}
 
 		.nav-container
@@ -127,12 +127,15 @@
 		.thumbnail
 		{
 			position: relative;
+			padding: 0;
+			border-radius: 0;
+			margin-bottom: 3em;
 		}
 
 		.thumbnail img
 		{
-			height: 150px;
-			background-color: #f0f0f0;
+			height: 200px;
+			/*background-color: #f0f0f0;*/
 		}
 
 		.thumbnail .details
@@ -141,8 +144,10 @@
 			bottom: 0;
 			right: 0;
 			left: 0;
-			background-image: -webkit-linear-gradient(rgba(0,0,0,.01), rgba(0,0,0,.1));
-			padding: 8px 0;
+			background-image: -webkit-linear-gradient(rgba(0,0,0,.03), rgba(0,0,0,.6));
+			padding: 45px 0 8px;
+			color: #c0c726;
+			letter-spacing: 1px;
 		}
 		
 		.most-popular h1
@@ -164,6 +169,7 @@
 		.filter-heading-container
 		{
 			background-color: #EABA46;
+			background-color: #c0c726;
 			text-align: center;
 			padding: .75em 0 .25em 0;
 			position: relative;
@@ -188,6 +194,11 @@
 			font-size: 1em;
 			letter-spacing: 3px;
 			font-weight: 600;
+		}
+
+		#hikes-container
+		{
+			margin-top: 2em;
 		}
 
 		#hikes-container.sorted .hike:first-child a
@@ -286,6 +297,35 @@
 			outline: none;
 		}
 
+		.filter-container
+		{
+			margin: 0; padding: 0;
+			display: inline-block;
+		}
+
+		.filter-container li 
+		{
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+			display: inline-block;
+			
+		}
+
+		.filter-container li a
+		{
+			font-size: 12px;
+			background-color: #c0c726;
+			padding: 5px 10px;
+			border-radius: 5px;
+			color: #fff;
+		}
+
+		.filter-container li a:hover
+		{
+			text-decoration: none;
+		}
+
 		footer
 		{
 			background-color: #F7921E;
@@ -347,6 +387,7 @@
 				<li role="presentation"><a href="#camping">Camping</a></li>
 				<li role="presentation"><a href="#">Other Adventures</a></li>
 				<li role="presentation"><a href="#"></a></li>
+				<li role="presentation"><a href="#">Learn</a></li>
 				<li role="presentation"><a href="#">Meet our Experts</a></li>
 			</ul>
 		</div>
@@ -403,8 +444,14 @@
 				</div>
 				<div class="col-lg-10 col-lg-pull-2 col-md-12">
 				
+				<div class="">
+					<h1>Most Popular <small class="">Sorted by:</small>
+					<ol class="filter-container">
+						<li><a href="">name</a></li>
+					</ol>
+					</h1>
+				</div>
 				<div class="most-popular">
-					<h1>Most Popular <small class="text-right">Sorted by:</small></h1>
 					<div id="hikes-container" class="row">
 					  
 					</div>
@@ -450,7 +497,8 @@
 				dateable: true,
 				trailhead: "",
 				description: "",
-				tips: ""
+				tips: "",
+				thumbnail: ""
 			},
 			{
 				name: "Wind Cave",
@@ -465,7 +513,8 @@
 				dateable: true,
 				trailhead: "5.2 miles up US Hwy. 89. The trailhead is located accross from Guinavah-Malibu Campground",
 				description: "",
-				tips: ""
+				tips: "",
+				thumbnail: "windcave.png"
 			},
 			{
 				name: "Crimson Trail",
@@ -480,7 +529,8 @@
 				dateable: "",
 				trailhead: ["Spring Hollow Campground, 4.3 miles from Logan", "Guinavah Campground, 5.3 miles from Logan"],
 				description: "",
-				tips: ""
+				tips: "",
+				thumbnail: ""
 			},
 			{
 				name: "River Trail",
@@ -495,7 +545,8 @@
 				dateable: true,
 				trailhead: "",
 				description: "",
-				tips: ""
+				tips: "",
+				thumbnail: ""
 			},
 			{
 				name: "Riverside Nature Trail",
@@ -510,7 +561,8 @@
 				dateable: "",
 				trailhead: "",
 				description: "",
-				tips: ""
+				tips: "",
+				thumbnail: ""
 			},
 			{
 				name: "Right Hand Fork",
@@ -525,7 +577,8 @@
 				dateable: "",
 				trailhead: "",
 				description: "",
-				tips: ""
+				tips: "",
+				thumbnail: ""
 			},
 			{
 				name: "Old Juniper",
@@ -540,7 +593,8 @@
 				dateable: "",
 				trailhead: "Wood Camp, 10.4 miles from Logan on US Hwy. 89",
 				description: "",
-				tips: ""
+				tips: "",
+				thumbnail: ""
 			},
 			{
 				name: "White Pine Lake",
@@ -555,7 +609,8 @@
 				dateable: "",
 				trailhead: "The trailhead is located at Tony Grove Lake. Parking at Tony Grove Lake parking area for day use. If staying overnight or longer park at backcountry trailhead 1/4 mile below the campground.",
 				description: "",
-				tips: ""
+				tips: "",
+				thumbnail: ""
 			}
 			];
 
