@@ -337,6 +337,21 @@
 			text-decoration: none;
 		}
 
+		button.dropdown-toggle.sortBy
+		{
+			float: none;
+			margin-left: 0px;
+			border: none;
+			text-decoration: underline;
+			color: #337AB7;
+		}
+
+		button.dropdown-toggle.sortBy:hover, button.dropdown-toggle.sortBy:focus
+		{
+			background-color: transparent;
+			box-shadow: none;
+		}
+
 		footer
 		{
 			background-color: #F7921E;
@@ -461,6 +476,20 @@
 							<li><a href="">name</a></li>
 						</ol>
 						</h1>
+					</div>
+					<div>
+						<div class="btn-group">
+							<label for="">Sort by:</label><button type="button" class="btn btn-default dropdown-toggle sortBy" data-toggle="dropdown" aria-expanded="false">
+							Popular <span class="caret"></span>
+							</button>
+							<ul class="dropdown-menu" role="menu">
+								<li><a href="#">Short</a></li>
+								<li><a href="#">Nearby</a></li>
+								<li><a href="#">Sunset</a></li>
+								<li class="divider"></li>
+								<li><a href="#">Sunrise</a></li>
+							</ul>
+						</div>
 					</div>
 					<div class="most-popular">
 						<div id="hikes-container" class="row">
